@@ -11,6 +11,11 @@
 </head>
 <body>
 
+    <!-- TODO: Iconos con la libreria de gist -->
+    <!-- TODO: Animacion on reload en git -->
+    <!-- TODO: Minicard con las tecnologias como git -->
+    <!-- TODO: Personalizar botones -->
+
     <header>
         <a href="#" class="logo">Portfolio</a>
         <div class="toggle"></div>
@@ -31,7 +36,74 @@
             <a href="#" class="btn">Sobre Mi</a>
         </div>
     </section>
+
+    <section class="about">
+        <div class="heading">
+            <h2>Sobre Mi</h2>
+        </div>
+        <div class="content">
+            <div class="contentBx w50">
+                <h3>Desarollador Web FullStack</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis ad libero, laboriosam dolor labore recusandae ipsum eveniet dolorem tenetur culpa doloribus ea quae, facilis ipsa optio? Ratione, reiciendis. Ducimus unde doloribus repellendus, necessitatibus facilis iusto labore consequuntur optio saepe eum animi atque, fugit a obcaecati cumque tempore ut odio! Molestiae sequi impedit eaque debitis aliquid consequatur, nam laborum cupiditate, mollitia reprehenderit odit vel itaque facere voluptatem consectetur ipsam unde est repudiandae tenetur! Culpa pariatur dolor quasi, fuga dicta laboriosam alias maiores, sed possimus atque a corporis quibusdam, id aspernatur eligendi asperiores distinctio ut harum dolores incidunt animi cum eaque!</p>
+            </div>
+            <div class="w50">
+                <img src="./img/me.jpg" alt="My portfolio image" class="img">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="heading white">
+            <h2>Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sed officia beatae iste totam aliquid? At qui inventore similique.</p>
+        </div>
+        <div class="content">
+
+           <div class="servicesBx">
+                <img src="./img/icon1.png" alt="icon1">
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium unde sed fuga corporis ea possimus quaerat iure eos sequi dolore. Facilis qui maxime explicabo iusto quisquam aliquam sed magni error!</p>
+           </div> 
+
+           <div class="servicesBx">
+                <img src="./img/icon2.png" alt="icon2">
+                <h2>Web Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium unde sed fuga corporis ea   possimus quaerat iure eos sequi dolore. Facilis qui maxime explicabo iusto quisquam aliquam sed       magni error!</p>
+            </div>
+
+            <div class="servicesBx">
+                <img src="./img/icon3.png" alt="icon3">
+                <h2>Android App</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium unde sed fuga corporis ea possimus quaerat iure eos sequi dolore. Facilis qui maxime explicabo iusto quisquam aliquam sed magni error!</p>
+           </div>
+
+           <div class="servicesBx">
+                <img src="./img/icon4.png" alt="icon4">
+                <h2>Photography</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium unde sed fuga corporis ea   possimus quaerat iure eos sequi dolore. Facilis qui maxime explicabo iusto quisquam aliquam sed   magni error!</p>
+            </div>
+
+            <div class="servicesBx">
+                <img src="./img/icon5.png" alt="icon5">
+                <h2>Content Writing</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium unde sed fuga corporis ea possimus quaerat iure eos sequi dolore. Facilis qui maxime explicabo iusto quisquam aliquam sed magni error!</p>
+           </div>
+
+           <div class="servicesBx">
+                <img src="./img/icon6.png" alt="icon6">
+                <h2>Video Editing</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium unde sed fuga corporis ea   possimus quaerat iure eos sequi dolore. Facilis qui maxime explicabo iusto quisquam aliquam sed   magni error!</p>
+            </div>
+
+        </div>
+    </section>
     
+    <script type="text/javascript">
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
     <script src="./js/index.js"></script>
 </body>
 </html>
