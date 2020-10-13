@@ -11,34 +11,28 @@
 </head>
 <body>
 
-    <!-- TODO: Iconos con la libreria de gist -->
-    <!-- TODO: Animacion on reload en git -->
-    <!-- TODO: Minicard con las tecnologias como git -->
-    <!-- TODO: Personalizar botones -->
-    <!-- TODO: Custom scrollbar -->
-
     <header>
         <a href="#" class="logo">Portfolio</a>
-        <div class="toggle"></div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Testimonial</a></li>
-            <li><a href="#">Work</a></li>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#services" onclick="toggleMenu();">Services</a></li>
+            <li><a href="#work" onclick="toggleMenu();">Work</a></li>
+            <li><a href="#testimonial" onclick="toggleMenu();">Testimonial</a></li>
+            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
         </ul>
     </header>
 
-    <section class="banner">
+    <section class="banner" id="home">
         <div class="textBx">
             <h2>Hola, soy<br><span>Gabriel Andres Brandalisse.</span></h2>
-            <h3>Desarollador Web FullStack</h3>
-            <a href="#" class="btn">Sobre Mi</a>
+            <h3>Desarollador Web FullStack.</h3>
+            <a href="#about" class="btn">Sobre Mi</a>
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="heading">
             <h2>Sobre Mi</h2>
         </div>
@@ -53,7 +47,7 @@
         </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
         <div class="heading white">
             <h2>Services</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sed officia beatae iste totam aliquid? At qui inventore similique.</p>
@@ -99,7 +93,7 @@
         </div>
     </section>
 
-    <section class="work">
+    <section class="work" id="work">
         <div class="heading">
             <h2>Mis últimos trabajos</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sed officia beatae iste totam aliquid? At qui inventore similique.</p>
@@ -128,7 +122,7 @@
         </div>
     </section>
 
-    <section class="testimonial">
+    <section class="testimonial" id="testimonial">
         <div class="heading">
             <h2>Testimoniales</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -148,13 +142,82 @@
         </div>
     </section>
 
+    <section class="contact" id="contact">
+        <div class="heading white">
+            <h2>Contacto</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="content">
+            <div class="contactInfo">
+                <h3>Información de Contacto</h3>
+                <div class="contactInfoBx">
+
+                    <div class="box">
+                        <div class="icon">
+                            <span class="iconify" data-icon="mdi:map-marker-outline" data-inline="false"></span>
+                        </div>
+                        <div class="text">
+                            <h3>Dirección</h3>
+                            <p>Jesús María,<br>Cordoba, <br>Argentina.</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="icon">
+                            <span class="iconify" data-icon="mdi:cellphone-basic" data-inline="false"></span>
+                        </div>
+                        <div class="text">
+                            <h3>Teléfono</h3>
+                            <p>3525 - 15504799</p>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="icon">
+                            <span class="iconify" data-icon="mdi:email-outline" data-inline="false"></span>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>gabibrandalisse@hotmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- .contactInfo -->
+
+            <div class="formBx">
+                <form>
+                    <h3>Envíame un Mensaje</h3>
+                    <input type="text" name="name" placeholder="Nombre Completo">
+                    <input type="email" name="email" placeholder="Email">
+                    <textarea name="msg" id="" cols="30" rows="10" placeholder="Tu Mensaje"></textarea>
+                    <input type="submit" name="submit"  value="Send">
+                </form>
+            </div>
+
+        </div> <!-- .content -->
+    </section>
+
+    <div class="copyright">
+        <p>Copyright &copy; 2020 Gabriel Andres Brandalisse. Todos los Derechos Reservados.</p>
+    </div>
+
     
     <script type="text/javascript">
         window.addEventListener("scroll", function(){
             var header = document.querySelector("header");
             header.classList.toggle("sticky", window.scrollY > 0);
         });
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector(".toggle");
+            var menu = document.querySelector(".menu");
+            menuToggle.classList.toggle("active");
+            menu.classList.toggle("active");
+        } 
     </script>
+    <!-- Iconify (Material Design Icons) -->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
