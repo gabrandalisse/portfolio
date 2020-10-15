@@ -148,6 +148,17 @@ img {
     max-width: 100%;
 }
 
+.w50 .img {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+    transition: all .5s ease-in-out;
+}
+
+.w50 .img:hover {
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%); 
+}
+
 .services {
     background: #111;
 }
@@ -326,7 +337,7 @@ img {
 
 .contactInfoBx .box .text h3 {
     font-weight: 500;
-    color: #2196f3;
+    color: #C08552;
     margin-bottom: 0;
 }
 

@@ -6,21 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="./css/fancy-intro.css">
     <link rel="stylesheet" href="./css/index.css">
 
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">Portfolio</a>
+        <a href="#" class="logo">Portafolio</a>
         <div class="toggle" onclick="toggleMenu();"></div>
         <ul class="menu">
-            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="#services" onclick="toggleMenu();">Services</a></li>
-            <li><a href="#work" onclick="toggleMenu();">Work</a></li>
-            <li><a href="#testimonial" onclick="toggleMenu();">Testimonial</a></li>
-            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+            <li><a href="#home" onclick="toggleMenu();">Inicio</a></li>
+            <li><a href="#about" onclick="toggleMenu();">Sobre Mi</a></li>
+            <li><a href="#services" onclick="toggleMenu();">Tecnologías</a></li>
+            <li><a href="#work" onclick="toggleMenu();">Trabajos</a></li>
+            <li><a href="#testimonial" onclick="toggleMenu();">Testimoniales</a></li>
+            <li><a href="#contact" onclick="toggleMenu();">Contacto</a></li>
         </ul>
     </header>
 
@@ -31,6 +32,26 @@
             <a href="#about" class="btn">Sobre Mi</a>
         </div>
     </section>
+
+    <!-- Animation -->
+    <div class="intro">
+        <div class="intro-text">
+            <h1 class="hide">
+                <span class="text">Bienvenido.</span>
+            </h1>
+            <h1 class="hide">
+                <span class="text">Welcome.</span>
+            </h1>
+            <h1 class="hide">
+                <span class="text">Benvenuto.</span>
+            </h1>
+            <h1 class="hide">
+                <span class="text">Willkommen.</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="slider"></div>
 
     <section class="about" id="about">
         <div class="heading">
@@ -216,8 +237,12 @@
             menu.classList.toggle("active");
         } 
     </script>
-    <!-- Iconify (Material Design Icons) -->
+    <!-- Iconify -->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+    integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+    crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
