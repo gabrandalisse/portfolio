@@ -8,7 +8,6 @@ tl.to(".intro", { y: "-100%", duration: 1 }, "-=1");
 tl.fromTo("header", { opacity: 0 }, { opacity: 1, duration: 1 });
 tl.fromTo(".textBx", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
 tl.fromTo(".about", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
-tl.fromTo(".services", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
+tl.fromTo(".technologies", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
 tl.fromTo(".work", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
-tl.fromTo(".testimonial", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
 tl.fromTo(".contact", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
