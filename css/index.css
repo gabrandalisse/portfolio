@@ -215,6 +215,11 @@ img {
    max-width: 100%; 
 }
 
+.c4-izmir {
+    --primary-color: #C08552;
+    --secondary-color: #000;
+}
+
 /* CONTACT */
 
 .contact {
