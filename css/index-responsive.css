@@ -6,6 +6,10 @@
         z-index: 1000;
     }
 
+    header .logo {
+        visibility: visible;
+    }
+
     .menu {
         position: fixed;
         top: 69px;
