@@ -150,6 +150,20 @@ header.sticky .logo {
     visibility: visible;
 }
 
+.carret {
+    animation: blink 1.6s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; 
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 header ul {
     position: relative;
     display: flex;

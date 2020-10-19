@@ -37,3 +37,8 @@ var swiper = new Swiper(".swiper-container", {
   },
   mousewheel: true,
 });
+
+// Dinamic year
+const currentYear = new Date().getFullYear();  
+const yearSite = document.querySelector(".year");
+yearSite.innerText = currentYear;
