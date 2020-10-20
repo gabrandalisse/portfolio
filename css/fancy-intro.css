@@ -11,7 +11,9 @@
 }
 
 .slider {
-    background: #C08552;
+    background: #0c002b; 
+    background: -webkit-linear-gradient(to top, #181818, #0c002b);
+    background: linear-gradient(to top, #181818  , #0c002b);
     position: fixed;
     top: 0;
     left: 0;
@@ -34,4 +36,18 @@
 .hide span {
     transform: translateY(100%);
     display: inline-block;
+}
+
+/* RESPONSIVE */
+
+@media ( max-width: 991px ) {
+    .intro-text {
+        font-size: 2.3rem;
+    }
+}
+
+@media ( max-width: 600px ) {
+    .intro-text {
+        font-size: 1.8rem;
+    }
 }

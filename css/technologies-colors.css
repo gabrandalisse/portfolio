@@ -1,0 +1,121 @@
+
+#csharp:hover {
+    background-color: #239120;
+}
+
+#java:hover {
+    background-color: #007396;
+}
+
+#javascript:hover {
+    background-color: #F7DF1E;
+    color: #000;
+}
+
+#php:hover {
+    background-color: #777BB4;
+}
+
+#python:hover {
+    background-color: #3776AB;
+}
+
+#css3:hover {
+    background-color: #1572B6;
+}
+
+#html5:hover {
+    background-color: #E34F26;
+}
+
+#graphql:hover {
+    background-color: #E10098;
+}
+
+#firebase:hover{
+    background-color: #FFCA28;
+    color: #000;
+}
+
+#nextjs:hover {
+    background-color: #000000;
+}
+
+#nodejs:hover {
+    background-color: #339933;
+}
+
+#nodemon:hover {
+    background-color: #76D04B;
+    color: #000;
+}
+
+#react:hover {
+    background-color: #61DAFB;
+    color: #000;
+}
+
+#redux:hover {
+    background-color: #764ABC;
+}
+
+#bootstrap:hover {
+    background-color: #563D7C;
+}
+
+#gulp:hover {
+    background-color: #CF4647;
+}
+
+#jquery:hover {
+    background-color: #0769AD;
+}
+
+#material-ui:hover {
+    background-color: #0081CB;
+}
+
+#npm:hover {
+    background-color: #CB3837;
+}
+
+#styled-components:hover {
+    background-color: #DB7093;
+}
+
+#microsoftsqlserver:hover {
+    background-color: #CC2927;
+}
+
+#mongodb:hover {
+    background-color: #47A248;
+}
+
+#mysql:hover {
+    background-color: #4479A1;
+}
+
+#git:hover {
+    background-color: #F05032;
+}
+
+#github:hover {
+    background-color: #181717;
+}
+
+#heroku:hover {
+    background-color: #430098;
+}
+
+#postman:hover {
+    background-color: #FF6C37;
+}
+
+#netlify:hover {
+    background-color: #00C7B7;
+}
+
+#linux:hover {
+    background-color: #FCC624;
+    color: #000;
+}

@@ -26,6 +26,33 @@ function toggleMenu() {
   menu.classList.toggle("active");
 }; 
 
+document.addEventListener("scroll", function(){
+
+  var userScroll = window.pageYOffset;
+
+  var bannerSection = document.querySelector(".banner");
+  var aboutSection = document.querySelector(".about");
+  var technologiesSection = document.querySelector(".technologies");
+  var workSection = document.querySelector(".work");
+
+  if( userScroll > (bannerSection.offsetHeight / 2) ){
+    console.log("Paso la mitad del banner");
+    bannerSection.classList.add("animate__fadeInUpBig");
+
+    // TERMINAR DE VER PQ NO ANDA 
+  } 
+  
+  if ( userScroll > ( (aboutSection.offsetHeight / 2) + (technologiesSection.offsetHeight / 2) ) ) {
+    console.log("Paso la mitad del about")
+  }
+ 
+ 
+
+
+  
+})
+
+
 // Technologies slider config
 var swiper = new Swiper(".swiper-container", {
   slidesPerView: 5,
