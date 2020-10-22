@@ -11,9 +11,8 @@
 }
 
 .slider {
-    background: #0c002b; 
-    background: -webkit-linear-gradient(to top, #181818, #0c002b);
-    background: linear-gradient(to top, #181818  , #0c002b);
+    background: #e6b980;
+    background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
     position: fixed;
     top: 0;
     left: 0;

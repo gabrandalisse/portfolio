@@ -1,4 +1,4 @@
-// Fancy intro animation
+//* Fancy intro animation
 const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
 tl.to(".text", { y: "0%", duration: 1, stagger: 0.25 });
@@ -12,13 +12,13 @@ tl.fromTo(".technologies", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
 tl.fromTo(".work", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
 tl.fromTo(".contact", { opacity: 0 }, { opacity: 1, duration: 1 }, "-=1");
 
-// Add sticky class on scroll to the nav
+//* Add sticky class on scroll to the nav
 window.addEventListener("scroll", function(){
   var header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 0);
 });
 
-// Responsive menu
+//* Responsive menu
 function toggleMenu() {
   var menuToggle = document.querySelector(".toggle");
   var menu = document.querySelector(".menu");
@@ -26,46 +26,34 @@ function toggleMenu() {
   menu.classList.toggle("active");
 }; 
 
-document.addEventListener("scroll", function(){
-
-  var userScroll = window.pageYOffset;
-
-  var bannerSection = document.querySelector(".banner");
-  var aboutSection = document.querySelector(".about");
-  var technologiesSection = document.querySelector(".technologies");
-  var workSection = document.querySelector(".work");
-
-  if( userScroll > (bannerSection.offsetHeight / 2) ){
-    console.log("Paso la mitad del banner");
-    bannerSection.classList.add("animate__fadeInUpBig");
-
-    // TERMINAR DE VER PQ NO ANDA 
-  } 
-  
-  if ( userScroll > ( (aboutSection.offsetHeight / 2) + (technologiesSection.offsetHeight / 2) ) ) {
-    console.log("Paso la mitad del about")
-  }
- 
- 
-
-
-  
-})
-
-
-// Technologies slider config
+//* Technologies slider config
 var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 5,
-  spaceBetween: 50,
+  slidesPerView: 1,
+  spaceBetween: 10,
   centeredSlides: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
   },
   mousewheel: true,
+  breakpoints: {
+    700: { // When the window size is >= 700 px
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1000: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    1300: {
+      slidesPerView: 4,
+      spaceBetween: 10,
+    }
+  }
 });
 
-// Dinamic year
+
+//* Dinamic year
 const currentYear = new Date().getFullYear();  
 const yearSite = document.querySelector(".year");
 yearSite.innerText = currentYear;
