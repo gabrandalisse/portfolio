@@ -52,6 +52,17 @@ var swiper = new Swiper(".swiper-container", {
   }
 });
 
+//* Form validation
+document.addEventListener("DOMContentLoaded",function() {
+  document.getElementById('contact-form').addEventListener("submit",function(e) {
+    e.preventDefault(); 
+
+    // Data
+
+
+  });
+});
+
 
 //* Dinamic year
 const currentYear = new Date().getFullYear();  

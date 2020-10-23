@@ -511,12 +511,11 @@
             </div> <!-- .contactInfo -->
 
             <div class="formBx">
-                <form>
+                <form id="contact-form">
                     <h3>Envíame un Mensaje</h3>
-                    <input type="text" id="name" name="name" placeholder="Tu Nombre Completo">
-                    <input type="email" id="email" name="email" placeholder="Tu Email">
-                    <textarea name="msg" id="message" cols="30" rows="10" placeholder="Tu Mensaje"></textarea>
-                    <div class="errorDiv"></div>
+                    <input type="text" id="name" name="name" placeholder="Tu Nombre Completo" required>
+                    <input type="email" id="email" name="email" placeholder="Tu Email" required>
+                    <textarea name="msg" id="message" cols="30" rows="10" placeholder="Tu Mensaje" required></textarea>
                     <input type="submit" name="submit"  value="Enviar">
                 </form>
             </div>
