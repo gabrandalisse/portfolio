@@ -58,6 +58,28 @@ document.addEventListener("DOMContentLoaded",function() {
     e.preventDefault(); 
 
     // Data
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const msg = document.getElementById("message");
+
+    // Div
+    const notification = document.querySelector(".notification-div");
+
+
+    // After send the email
+    notification.innerText = "Mensaje enviado con éxito.";
+    notification.style.border = "1px solid green";
+    notification.style.marginBottom = "10px";
+    notification.style.padding = "20px";
+    notification.style.color = "#fff";
+    notification.style.textAlign = "center";
+
+    setTimeout(() => {
+      notification.style.display = "none";
+    }, 3000);
+
+    
+
 
 
   });
