@@ -12,7 +12,7 @@
 
 .slider {
     background: #e6b980;
-    background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+    background: linear-gradient(to bottom, #DE9401 0%, #B15D0B 100%);
     position: fixed;
     top: 0;
     left: 0;
