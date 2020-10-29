@@ -65,6 +65,16 @@ document.addEventListener("DOMContentLoaded",function() {
     // Div
     const notification = document.querySelector(".notification-div");
 
+    if( name.value.trim() === "" || ( email.value.trim === "" || ( email.value.indexOf("@") === -1 )) || msg.value.trim() === "") {
+      notification.innerText = "Todos los campos son obligatorios.";
+      notification.style.border = "1px solid red";
+      notification.style.marginBottom = "10px";
+      notification.style.padding = "20px";
+      notification.style.color = "#fff";
+      notification.style.textAlign = "center";
+      return; 
+    }
+
 
     // After send the email
     notification.innerText = "Mensaje enviado con éxito.";
