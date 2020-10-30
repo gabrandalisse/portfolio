@@ -5,6 +5,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriel Andres Brandalisse">
+    <meta name="description" content="Mi portafolio personal dónde expongo mis trabajos y tecnología que utilizo para desarollar los mismos."/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -33,7 +35,7 @@
         <div class="textBx">
             <h2>Hola, soy<br><span>Gabriel Andres Brandalisse.</span></h2>
             <h3>Desarollador Web FullStack.</h3>
-            <a href="#about" class="btn">
+            <a href="#about" class="btn-about">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -70,7 +72,7 @@
         <div class="content">
             <div class="contentBx w50">
                 <h3>// Desarollador Web FullStack</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt perspiciatis ad libero, laboriosam dolor labore recusandae ipsum eveniet dolorem tenetur culpa doloribus ea quae, facilis ipsa optio? Ratione, reiciendis. Ducimus unde doloribus repellendus, necessitatibus facilis iusto labore consequuntur optio saepe eum animi atque, fugit a obcaecati cumque tempore ut odio! Molestiae sequi impedit eaque debitis aliquid consequatur, nam laborum cupiditate, mollitia reprehenderit odit vel itaque facere voluptatem consectetur ipsam unde est repudiandae tenetur! Culpa pariatur dolor quasi, fuga dicta laboriosam alias maiores, sed possimus atque a corporis quibusdam, id aspernatur eligendi asperiores distinctio ut harum dolores incidunt animi cum eaque!</p>
+                <p>Soy estudiante avanzado de la carrera Ingeniería en Sistemas de Información en la Universidad Tecnológica Nacional Facultad Regional Córdoba y desarollador web con conocimientos en los stack WAMP, MERN, entre otros. Me apaciona el desarollo tanto Front-End como Back-End. Ser autodidacta, asi como diferentes capacitaciones que tome, me permiten seguir creciendo aplicando esos conocimientos en mis propios proyectos. Estoy ansioso de poder entrar a trabajar en una empresa para poder aplicar todo lo que se, dar lo mejor de mi y permitir crecer profesionalmente en el mundo de la tecnología, que tanto me apaciona.</p>
             </div>
             <div class="w50">
                 <img src="./img/me.jpg" alt="My portfolio image" class="img">
@@ -364,84 +366,77 @@
             <h2>Mis últimos trabajos</h2>
             <p>Todos los trabajos diseñados y/o desarollados por mi</p>
         </div>
-        <div class="content">
+
+        <div class="container">
 
             <div class="workBx">
-                <figure class="c4-izmir c4-border-corners-2 c4-image-zoom-in c4-gradient-bottom">
-                    <img src="./img/works/work01.jpg" alt="Sample Image">
-                    <figcaption>
-                        <div class="c4-reveal-up">
-                            <h3>
-                                Banco de Imágenes
-                            </h3>
-                        </div>
-                        <div class="c4-fade-up">
-                            <br>
-                            <p>
-                                Un banco de imágenes desarollado con React.js utilizando la API de Pixabay.
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
+                <div class="workImg">
+                    <img src="./img/works/work01.jpg" alt="" >
+                </div>
+
+                <div class="workDescription">
+                    <h3>// Product Hunt Clon</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum placeat quibusdam aliquam aspernatur voluptatem inventore reiciendis, commodi voluptatum quisquam alias nihil labore doloribus libero, magni eos nulla numquam totam error!</p>
+                    <div class="workLinks">
+                        <a href=""><span class="iconify" data-icon="mdi:github" data-inline="false"></span> Ver Código</a>
+                        <a href=""><span class="iconify" data-icon="mdi:web" data-inline="false"></span> Visitar</a>
+                    </div>
+                </div>
             </div>
 
             <div class="workBx">
-                <figure class="c4-izmir c4-border-corners-2 c4-image-zoom-in c4-gradient-bottom">
-                    <img src="./img/works/work02.jpg" alt="Sample Image">
-                    <figcaption>
-                        <div class="c4-reveal-up">
-                            <h3>
-                                Aplicación de Clima
-                            </h3>
-                        </div>
-                        <div class="c4-fade-up">
-                            <br>
-                            <p>
-                                Una simple pero eficaz aplicación desarollada completamente en React.js que muestra el clima en determinados lugares utilizando la API de OpenWeatherMap.
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
+                <div class="workDescription">
+                    <h3>// Weather React App</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum placeat quibusdam aliquam aspernatur voluptatem inventore reiciendis, commodi voluptatum quisquam alias nihil labore doloribus libero, magni eos nulla numquam totam error!</p>
+                    <div class="workLinks">
+                        <a href=""><span class="iconify" data-icon="mdi:github" data-inline="false"></span> Ver Código</a>
+                        <a href=""><span class="iconify" data-icon="mdi:web" data-inline="false"></span> Visitar</a>
+                    </div>
+                </div>
+
+                <div class="workImg">
+                    <img src="./img/works/work02.jpg" alt="">
+                </div>
             </div>
 
             <div class="workBx">
-                <figure class="c4-izmir c4-border-corners-2 c4-image-zoom-in c4-gradient-bottom">
-                    <img src="./img/works/work04.jpg" alt="Sample Image">
-                    <figcaption>
-                        <div class="c4-reveal-up">
-                            <h3>
-                                Cotizador de Criptomonedas
-                            </h3>
-                        </div>
-                        <div class="c4-fade-up">
-                            <br>
-                            <p>
-                                Desarollada en React.js consumiendo una API externa esta aplicación te permite obtener al instante gran variedad de cotizaciones de criptomonedas.
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
+
+                <div class="workImg">
+                    <img src="./img/works/work03.jpg" alt="">
+                </div>
+
+                <div class="workDescription">
+                    <h3>// Cotizador de Seguros</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum placeat quibusdam aliquam aspernatur voluptatem inventore reiciendis, commodi voluptatum quisquam alias nihil labore doloribus libero, magni eos nulla numquam totam error!</p>
+                    <div class="workLinks">
+                        <a href=""><span class="iconify" data-icon="mdi:github" data-inline="false"></span> Ver Código</a>
+                        <a href=""><span class="iconify" data-icon="mdi:web" data-inline="false"></span> Visitar</a>
+                    </div>
+                </div>
+
             </div>
 
             <div class="workBx">
-                <figure class="c4-izmir c4-border-corners-2 c4-image-zoom-in c4-gradient-bottom">
-                    <img src="./img/works/work03.jpg" alt="Sample Image">
-                    <figcaption>
-                        <div class="c4-reveal-up">
-                            <h3>
-                                Cotizador de Seguros
-                            </h3>
-                        </div>
-                        <div class="c4-fade-up">
-                            <br>
-                            <p>
-                                Esta aplicación desarollada en React.js te permite obtener la cotización de varios seguros dependiendo las opciones que el usuario elija. 
-                            </p>
-                        </div>
-                    </figcaption>
-                </figure>
+                <div class="workDescription">
+                    <h3>// Cotizador de Criptomonedas</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum placeat quibusdam aliquam aspernatur voluptatem inventore reiciendis, commodi voluptatum quisquam alias nihil labore doloribus libero, magni eos nulla numquam totam error!</p>
+                    <div class="workLinks">
+                        <a href=""><span class="iconify" data-icon="mdi:github" data-inline="false"></span> Ver Código</a>
+                        <a href=""><span class="iconify" data-icon="mdi:web" data-inline="false"></span> Visitar</a>
+                    </div>
+                </div>
+
+                <div class="workImg">
+                    <img src="./img/works/work04.jpg" alt="">
+                </div>
             </div>
+
+            
+
+            
+          
         </div>
+      
 
     </section>
 

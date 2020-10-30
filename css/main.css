@@ -10,7 +10,7 @@
     scroll-behavior: smooth;
 }
 
-.btn {
+.btn-about {
     margin-top: 20px;
     position: absolute;
     color: #1670f0;
@@ -23,7 +23,7 @@
     overflow: hidden;
 }
 
-.btn:before {
+.btn-about:before {
     content: "";
     position: absolute;
     top: 2px;
@@ -33,7 +33,7 @@
     background: rgba(255, 255, 255, 0.05);
 }
 
-.btn span:nth-child(1) {
+.btn-about span:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
@@ -53,7 +53,7 @@
     }
 }
 
-.btn span:nth-child(2) {
+.btn-about span:nth-child(2) {
     position: absolute;
     top: 0;
     right: 0;
@@ -74,7 +74,7 @@
     }
 }
 
-.btn span:nth-child(3) {
+.btn-about span:nth-child(3) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -94,7 +94,7 @@
     }
 }
 
-.btn span:nth-child(4) {
+.btn-about span:nth-child(4) {
     position: absolute;
     top: 0;
     left: 0;
@@ -255,6 +255,10 @@ section {
     margin-bottom: 10px;
 }
 
+.contentBx p {
+    line-height: 1.6;
+}
+
 .w50 {
     min-width: 50%;
 }
@@ -311,7 +315,6 @@ img {
 progress {
     padding-top: 10px;
     border-radius: 10px; 
-    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
 }
 
 progress::-webkit-progress-bar {
@@ -327,24 +330,51 @@ progress::-webkit-progress-value {
 
 /* WORK */
 
-.work .content {
+.work .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.container .workBx {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.workBx .workDescription {
+    position: relative;
+}
+
+.workBx .workDescription h3 {
+    padding: 20px 0;
+}
+
+.workBx .workDescription a {
+    padding: 15px;
+    border: 1px solid black;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #000;
+}
+
+.workBx .workDescription a:hover {
+    background-color: #111;
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+
+.workDescription .workLinks {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.work .content .workBx {
-    width: 50%;
-    padding: 20px;
-}
-
-.work .content .workBx img {
-   max-width: 100%; 
-}
-
-.c4-izmir {
-    --primary-color: #0c002b;
-    --secondary-color: #1670f0;
 }
 
 /* CONTACT */
@@ -402,8 +432,8 @@ progress::-webkit-progress-value {
 }
 
 .formBx form input[type="submit"]:hover {
-    background-color: #1670f0;
-    color: white;
+    background-color: #fff;
+    color: #111;
 }
 
 .contactInfo {
