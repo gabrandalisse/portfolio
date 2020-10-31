@@ -342,6 +342,30 @@ progress::-webkit-progress-value {
     gap: 20px;
 }
 
+.workBx .workImg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+#w1 {
+    background-image: url("../img/works/work01.jpg");
+}
+
+#w2 {
+    background-image: url("../img/works/work02.jpg");
+}
+
+#w3 {
+    background-image: url("../img/works/work03.jpg");
+}
+
+#w4 {
+    background-image: url("../img/works/work04.jpg");
+}
+
 .workBx .workDescription {
     position: relative;
 }
