@@ -10,6 +10,10 @@
     scroll-behavior: smooth;
 }
 
+p {
+    line-height: 1.6;
+}
+
 .btn-about {
     margin-top: 20px;
     position: absolute;
@@ -255,10 +259,6 @@ section {
     margin-bottom: 10px;
 }
 
-.contentBx p {
-    line-height: 1.6;
-}
-
 .w50 {
     min-width: 50%;
 }
@@ -348,6 +348,7 @@ progress::-webkit-progress-value {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 400px;
+    box-shadow: inset 0 0 5px #000000;
 }
 
 #w1 {
