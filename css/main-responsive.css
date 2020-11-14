@@ -110,20 +110,35 @@
         margin: 10px;
     }
 
-    .work .content .workBx {
+    /* WORK */
+
+    .container .workBx {
+        grid-template-columns: 1fr;
+
+    }
+    .workBx .workImg {
+        height: 250px;
         width: 100%;
-        padding: 10px;
     }
 
-    .testimonial .content .testimonialBx {
-        max-width: calc(100% - 20px);
-        padding: 40px 20px;
-        margin: 10px;
+    .workDescription {
+        grid-row: 2 / 5;
     }
 
-    .testimonial .content .testimonialBx h3 {
-        margin-top: 20px;
+    .workBx .workDescription a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
+
+    .workDescription .workLinks {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    /* CONTACT */
 
     .contactInfo {
         margin: 20px 0;
