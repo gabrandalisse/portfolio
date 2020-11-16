@@ -267,17 +267,6 @@ img {
     max-width: 100%;
 }
 
-.w50 .img {
-    -webkit-filter: grayscale(100%); 
-    filter: grayscale(100%);  
-    transition: all .5s ease-in-out;
-}
-
-.w50 .img:hover {
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%); 
-}
-
 /* TECHNOLOGIES */
 
 .technologies {
@@ -294,11 +283,14 @@ img {
 .technologies .content .technologiesBx {
     padding: 40px 20px;
     background: #222;
-    color: #fff;
     max-width: 340px;
     margin: 20px;
     text-align: center;
-    transition: 0.5s;
+    transition: 0.3s;
+}
+
+.technologies .content .technologiesBx:hover {
+    transform: scale(1.2);
 }
 
 .technologies .content .technologiesBx img {
@@ -310,22 +302,12 @@ img {
     font-size: 20px;
     font-weight: 600;
     margin: 5px 0px;
+    color: #000;
 }
 
-progress {
-    padding-top: 10px;
-    border-radius: 10px; 
-}
-
-progress::-webkit-progress-bar {
-    background-color: white;
-    border-radius: 10px;
-}
-
-progress::-webkit-progress-value {
-    background-color: black;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 3px rgba( 0, 0, 0, 0.6 );
+#next h2,
+#github h2 {
+    color: #fff;
 }
 
 /* WORK */
@@ -348,7 +330,6 @@ progress::-webkit-progress-value {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 400px;
-    box-shadow: inset 0 0 5px #000000;
 }
 
 #w1 {
