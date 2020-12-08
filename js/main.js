@@ -1,4 +1,14 @@
 
+//* On document load
+$(document).ready(() => {
+  
+  // Form elements
+  const notification = $("#notification");
+  const spinner = $(".sk-folding-cube");
+
+  notification.hide();
+  spinner.hide();
+});
 
 //* Add sticky class on scroll to the nav
 window.addEventListener("scroll", function(){
@@ -41,48 +51,69 @@ var swiper = new Swiper(".swiper-container", {
 });
 
 //* Form validation
-document.addEventListener("DOMContentLoaded",function() {
-  document.getElementById('contact-form').addEventListener("submit",function(e) {
-    e.preventDefault(); 
+$("#contact-form").on("submit", function (e) {
+  e.preventDefault();
 
-    // Data
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const msg = document.getElementById("message");
+  // Send button
+  const sendBtn = $("#sendBtn");
 
-    // Div
-    const notification = document.querySelector(".notification-div");
+  // Divs
+  const notification = $("#notification");
+  const spinner = $(".sk-folding-cube");
 
-    if( name.value.trim() === "" || ( email.value.trim === "" || ( email.value.indexOf("@") === -1 )) || msg.value.trim() === "") {
-      notification.innerText = "Todos los campos son obligatorios.";
-      notification.style.border = "1px solid red";
-      notification.style.marginBottom = "10px";
-      notification.style.padding = "20px";
-      notification.style.color = "#fff";
-      notification.style.textAlign = "center";
-      return; 
-    }
+  // Data
+  const name = $("#name").val().trim();
+  const email = $("#email").val().trim();
+  const msg = $("#message").val().trim();
 
-
-    // After send the email
-    notification.innerText = "Mensaje enviado con éxito.";
-    notification.style.border = "1px solid green";
-    notification.style.marginBottom = "10px";
-    notification.style.padding = "20px";
-    notification.style.color = "#fff";
-    notification.style.textAlign = "center";
-
+  // Verify if the data is correct
+  if (name === "" || email === "" || email.indexOf("@") === -1 || msg === "") {
+    notification.show();
+    notification.text("Todos los campos son obligatorios.");
+    notification.css("border", "1px solid red");
     setTimeout(() => {
-      notification.style.display = "none";
+      notification.hide();
     }, 3000);
+    return;
+  }
 
-    
+  // Hide the btn and show a loader
+  sendBtn.hide();
+  spinner.show();
 
+  // Put all the form data in an array
+  const allFormData = $(this).serializeArray();
 
+  // Send all the info to the backend to send the email.
+  $.ajax({
+    type: $(this).attr("method"),
+    data: allFormData,
+    url: $(this).attr("action"),
+    dataType: "json",
+    success: function (data) {
+      if (data.response == "success") {
+        spinner.hide();
+        notification.text("Mensaje enviado con éxito.");
+        notification.css("border", "1px solid green");
+        notification.show();
+        sendBtn.show();
 
+        setTimeout(() => {
+          notification.hide();
+        }, 5000);
+      } else {
+        spinner.hide();
+        notification.text("Hubo un error, el mensaje no se pudo enviar.");
+        notification.css("border", "1px solid red");
+        notification.show();
+        sendBtn.show();
+        setTimeout(() => {
+          notification.hide();
+        }, 5000);
+      }
+    },
   });
 });
-
 
 //* Dinamic year
 const currentYear = new Date().getFullYear();  
