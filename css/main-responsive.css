@@ -74,6 +74,7 @@
 
     .banner {
         padding: 150px 50px 100px;
+        background-attachment: scroll;
     }
 
     .banner h2 {
@@ -102,12 +103,14 @@
         flex-direction: column;
     }
 
-    .w50 {
-        margin-bottom: 20px;
-    }
-
     .technologies .content .technologiesBx {
         margin: 10px;
+    }
+
+    /* ABOUT */
+
+    section.about {
+        margin: 0;
     }
 
     /* WORK */
@@ -116,9 +119,15 @@
         grid-template-columns: 1fr;
 
     }
+
+    .work .container {
+        gap: 50px;
+    }
+
     .workBx .workImg {
         height: 250px;
         width: 100%;
+        background-attachment: scroll;
     }
 
     .workDescription {
@@ -136,6 +145,10 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+    }
+
+    .workBx .workDescription a {
+        margin-right: 0;
     }
 
     /* CONTACT */
