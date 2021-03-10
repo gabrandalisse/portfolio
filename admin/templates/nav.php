@@ -33,7 +33,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="add-work.php" class="nav-link">
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Agregar Nuevo</p>
                 </a>
@@ -57,27 +57,63 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="add-technology.php" class="nav-link">
                 <i class="fas fa-plus nav-icon"></i>
                   <p>Agregar Nueva</p>
                 </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="../../index.html" class="nav-link">
+                  <i class="fas fa-stream nav-icon"></i>
+                  <p>
+                    Categorías
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                      <i class="fas fa-list-ul nav-icon"></i>
+                      <p>Ver Todas</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="add-tech-category.php" class="nav-link">
+                      <i class="fas fa-plus nav-icon"></i>
+                      <p>Agregar Nueva</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
+              <i class="far fa-copy nav-icon"></i>
               <p>
-                Sobre Mi
+                Curriculum Vitae
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="far fa-copy nav-icon"></i>
-                  <p>Curriculum Vitae</p>
+                  <i class="fas fa-building nav-icon"></i>
+                  <p>Experiencia Laboral</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../layout/top-nav.html" class="nav-link">
+                  <i class="fas fa-book nav-icon"></i>
+                  <p>Estudios Academicos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../layout/top-nav.html" class="nav-link">
+                  <i class="far fa-comments nav-icon"></i>
+                  <p>Cursos y Conferencias</p>
                 </a>
               </li>
             </ul>
