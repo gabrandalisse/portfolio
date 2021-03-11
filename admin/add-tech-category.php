@@ -1,4 +1,5 @@
 <?php 
+  // include_once('./functions/functions.php'); 
   include_once('./templates/header.php'); 
   include_once('./templates/top-bar.php'); 
   include_once('./templates/nav.php'); 
@@ -26,16 +27,17 @@
         </div>
 
         <div class="card-body">
-            <form role="form">
+            <form role="form" name="add-tech-cat" id="add-tech-cat" method="post" action="./functions/insert-tech-category.php">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="catName">Nombre</label>
-                        <input type="text" class="form-control" id="catName" placeholder="Ingrese el nombre de la categoría">
+                        <input type="text" class="form-control" id="catName" name="catName" placeholder="Ingrese el nombre de la categoría">
                     </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
+                  <input type="hidden" name="add-tech-category" value="1">
                   <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
