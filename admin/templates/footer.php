@@ -16,6 +16,10 @@
 
 <!-- jQuery -->
 <script src="./js/jquery.min.js"></script>
+<!-- Sweet Alert 2 -->
+<script src="js/sweetalert2.all.min.js"></script>
+<!-- Technologies Categories Ajax -->
+<script src="js/tech-categories-ajax.js"></script>
 <!-- Bootstrap 4 -->
 <script src="./js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
