@@ -1,0 +1,137 @@
+[
+    {
+        "name": "Bootstrap",
+        "type": "frontend",
+        "path": "/img/technologies/bootstrap.svg"
+    },
+    {
+        "name": "CSS3",
+        "type": "frontend",
+        "path": "/img/technologies/css3.svg"
+    },
+    {
+        "name": "Gatsby",
+        "type": "frontend",
+        "path": "/img/technologies/gatsby.svg"
+    },
+    {
+        "name": "HTML5",
+        "type": "frontend",
+        "path": "/img/technologies/html5.svg"
+    },
+    {
+        "name": "jQuery",
+        "type": "frontend",
+        "path": "/img/technologies/jquery.svg"
+    },
+    {
+        "name": "Material UI",
+        "type": "frontend",
+        "path": "/img/technologies/materialui.svg"
+    },
+    {
+        "name": "Next.js",
+        "type": "frontend",
+        "path": "/img/technologies/nextdotjs.svg"
+    },
+    {
+        "name": "React",
+        "type": "frontend",
+        "path": "/img/technologies/react.svg"
+    },
+    {
+        "name": "Redux",
+        "type": "frontend",
+        "path": "/img/technologies/redux.svg"
+    },
+    {
+        "name": "Styled Components",
+        "type": "frontend",
+        "path": "/img/technologies/styledcomponents.svg"
+    },
+    {
+        "name": "Tailwind CSS",
+        "type": "frontend",
+        "path": "/img/technologies/tailwindcss.svg"
+    },
+    {
+        "name": "C#",
+        "type": "backend",
+        "path": "/img/technologies/csharp.svg"
+    },
+    {
+        "name": "Express.js",
+        "type": "backend",
+        "path": "/img/technologies/express.svg"
+    },
+    {
+        "name": "Firebase",
+        "type": "backend",
+        "path": "/img/technologies/firebase.svg"
+    },
+    {
+        "name": "csharp",
+        "type": "backend",
+        "path": "/img/technologies/csharp.svg"
+    },
+    {
+        "name": "Git",
+        "type": "backend",
+        "path": "/img/technologies/git.svg"
+    },
+    {
+        "name": "GitHub",
+        "type": "backend",
+        "path": "/img/technologies/github.svg"
+    },
+    {
+        "name": "GraphQL",
+        "type": "backend",
+        "path": "/img/technologies/graphql.svg"
+    },
+    {
+        "name": "Java",
+        "type": "backend",
+        "path": "/img/technologies/Java.svg"
+    },
+    {
+        "name": "JavaScript",
+        "type": "backend",
+        "path": "/img/technologies/javascript.svg"
+    },
+    {
+        "name": "Linux",
+        "type": "backend",
+        "path": "/img/technologies/linux.svg"
+    },
+    {
+        "name": "SQL Server",
+        "type": "backend",
+        "path": "/img/technologies/microsoftsqlserver.svg"
+    },
+    {
+        "name": "MongoDB",
+        "type": "backend",
+        "path": "/img/technologies/mongodb.svg"
+    },
+    {
+        "name": "MySQL",
+        "type": "backend",
+        "path": "/img/technologies/mysql.svg"
+    },
+    {
+        "name": "Node.Js",
+        "type": "backend",
+        "path": "/img/technologies/nodedotjs.svg"
+    },
+    {
+        "name": "PHP",
+        "type": "backend",
+        "path": "/img/technologies/php.svg"
+    },
+    {
+        "name": "Python",
+        "type": "backend",
+        "path": "/img/technologies/python.svg"
+    }
+]
