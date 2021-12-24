@@ -10,6 +10,7 @@
       "@styles/*": ["styles/*"],
       "@hooks/*": ["hooks/*"],
       "@constants/*": ["constants/*"],
+      "@db/*": ["db/*"]
     }
   }
 }
