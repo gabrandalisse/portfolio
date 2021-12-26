@@ -4,7 +4,7 @@ import AboutMe from "../components/AboutMe";
 
 export default function about() {
   return (
-    <ContainerBlock>
+    <ContainerBlock title="About - Gabriel Andres Brandalisse">
       <AboutMe />
     </ContainerBlock>
   );
