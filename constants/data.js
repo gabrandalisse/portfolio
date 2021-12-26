@@ -2,7 +2,7 @@ const userData = {
   githubUsername: "gabrandalisse",
   name: "Gabriel Andres",
   designation: "Full-Stack Developer",
-  avatarUrl: "/avatar1.jpg",
+  avatarUrl: "/avatar2.jpg",
   email: "gabibrandalisse@gmail.com",
   phone: "+549 3525-504799",
   address: "Córdoba, Argentina.",
