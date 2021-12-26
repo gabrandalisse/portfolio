@@ -27,11 +27,6 @@ const userData = {
       link: "https://hotel-gatsby-react.netlify.app/",
       imgUrl: "/img/gatsby-hotel.png",
     },
-    {
-      title: "MyItinerary",
-      link: "https://algochurn.com",
-      imgUrl: "/algochurn.png",
-    },
   ],
   about: {
     title:
