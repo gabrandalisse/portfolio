@@ -36,7 +36,7 @@ const userData = {
 
       `I've been coding in the MERN (MongoDB, Express, React.js (with Bootstrap, Tailwind CSS, Material UI, Styled Components, Gatsby, Next.js, Redux and GraphQL), Node.js (with TypeScript)), WAMP (Windows, Apache, MySQL, PHP) and JAM (JavaScript, API, Markup) stack.`,
 
-      `Also I have experience developing in Python, Java, JavaScript, C#, PHP using relational and no relational databases such as SQL Server, MySQL, MongoDB, etc. And I also use Git, GitHub, GitLab, Postman, Linux, tools that helps me create aweasome products.`,
+      `Also I have experience developing in Python, Java, JavaScript, C#, PHP using relational and no relational databases such as SQL Server, MySQL, MongoDB, etc. And I also use Git, GitHub, GitLab, Postman, Linux, Docker, Jest, tools that helps me create aweasome products.`,
 
       `Currently I'm working as a Software Engineer at Naranja X where I focus in the Back End development using AWS technologies (such as Step Functions, Lambdas, etc.), Serverless Framework, Node.js and TypeScript. Using Scrum as sofware development metodology.`,
     ],
