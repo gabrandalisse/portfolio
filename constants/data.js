@@ -37,12 +37,16 @@ const userData = {
     title:
       "I'm a software developer that loves building products and web applications that impact millions of lives",
     description: [
-      `I've been developing full-stack application since I was 10 years old. I didn't know what full-stack meant at that time because the term was not coined back then. I'm so out of content right now that I'm literally crying writing this text since lorem text is so 2012 now.`,
-      `After learning HTML and struggling with CSS, I came up with a brilliant idea of using bootstrap so that I don't have to style everything by myself and - for obvious reasons - if you knew bootstrap, you were cool.`,
-      `But now, I'm a legend. I've been coding in React, Angular, Vue, Svelte, Node.js, Express, Fastify, MongoDB, MySQL, Bootstrap, Tailwind, C, C++, C#, Rust, Haskell, Perl, PHP, Assembly, Logo and YouDontKnowShit programming language etc to name a few. Although I barely know the syntax (Psst, Stack overflow!), I consider myself a Ninja developer I'm laughing right now.`,
+      `I'm a 4th year Information Systems Engineering student and Full Stack Web Developer. I consider myself a proactive, commited and self-taught person. I love challenges and I consider teamwork to be a very good way to solve them.`,
+
+      `I've been coding in the MERN (MongoDB, Express, React.js (with Bootstrap, Tailwind CSS, Material UI, Styled Components, Gatsby, Next.js, Redux and GraphQL), Node.js (with TypeScript)), WAMP (Windows, Apache, MySQL, PHP) and JAM (JavaScript, API, Markup) stack.`,
+
+      `Also I have experience developing in Python, Java, JavaScript, C#, PHP using relational and no relational databases such as SQL Server, MySQL, MongoDB, etc. And I also use Git, GitHub, GitLab, Postman, Linux, tools that helps me create aweasome products.`,
+
+      `Currently I'm working as a Software Engineer at Naranja X where I focus in the Back End development using AWS technologies (such as Step Functions, Lambdas, etc.), Serverless Framework, Node.js and TypeScript. Using Scrum as sofware development metodology.`,
     ],
-    currentProject: "Don Lino App",
-    currentProjectUrl: "https://tailwindmasterkit.com",
+    currentProject: "SAFEPASS",
+    currentProjectUrl: "https://safepass-app.netlify.app/",
   },
   experience: [
     {

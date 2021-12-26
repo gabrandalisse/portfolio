@@ -19,10 +19,12 @@ export default function AboutMe() {
           >
             {userData.about.title}. Currently working on{" "}
             <a
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-red-500 rounded-md px-2 py-1 text-white"
               href={userData.about.currentProjectUrl}
             >
-              {userData.about.currentProject} ✈️
+              {userData.about.currentProject} 🚀
             </a>
           </p>
         </div>
@@ -30,7 +32,6 @@ export default function AboutMe() {
 
       <div className="bg-[#F1F1F1] dark:bg-gray-900 px-4">
         <div className="pt-20 grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto gap-y-20 gap-x-20">
-          
           {/* Social buttons */}
           <div className="inline-flex flex-col">
             <div>
@@ -45,7 +46,7 @@ export default function AboutMe() {
                 >
                   mail
                 </a>{" "}
-                and I'll get back. 
+                and I'll get back.
               </p>
             </div>
 
@@ -72,7 +73,6 @@ export default function AboutMe() {
               Social Links
             </h1>
             <div className="mt-4 ml-4">
-            
               <div className="flex flex-row justify-start items-center">
                 <a
                   target="_blank"
@@ -100,10 +100,9 @@ export default function AboutMe() {
                   </p>
                 </a>
               </div>
-            
             </div>
           </div>
-          
+
           {/* Description and technologies */}
           <div className="col-span-1 md:col-span-2">
             {userData.about.description?.map((desc, idx) => (
@@ -114,23 +113,6 @@ export default function AboutMe() {
                 {desc}
               </p>
             ))}
-
-            <br />
-            <h1 className="bg-red-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
-              Technologies
-            </h1>
-            <div className="flex flex-row flex-wrap mt-8">
-              
-              {technologies.map((tech, index) => (
-                <img
-                  title={tech.name}
-                  key={index}
-                  src={tech.path}
-                  className="h-20 w-20 mx-4 my-4"
-                />
-              ))}
-
-            </div>
           </div>
         </div>
       </div>
