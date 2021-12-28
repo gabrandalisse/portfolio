@@ -1,6 +1,5 @@
 import React from "react";
 import userData from "@constants/data";
-import technologies from "@constants/technologies.json";
 
 export default function AboutMe() {
   return (

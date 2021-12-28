@@ -9,22 +9,22 @@ const userData = {
   projects: [
     {
       title: "Product Hunt Clon",
-      link: "https://product-hunt-clone-9e94f.web.app/",
+      link: "https://github.com/gabrandalisse/product-hunt",
       imgUrl: "/img/product-hunt-clon.png",
     },
     {
       title: "SAFEPASS",
-      link: "https://safepass-app.netlify.app/",
+      link: "https://github.com/gabrandalisse/safepass-client",
       imgUrl: "/img/safepass.png",
     },
     {
       title: "MERNTasks",
-      link: "https://merntask-gab.netlify.app/",
+      link: "https://github.com/gabrandalisse/merntask-client",
       imgUrl: "/img/merntasks.png",
     },
     {
       title: "Gatsby Hotel",
-      link: "https://hotel-gatsby-react.netlify.app/",
+      link: "https://github.com/gabrandalisse/gatsby-hotel",
       imgUrl: "/img/gatsby-hotel.png",
     },
   ],
