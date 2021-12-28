@@ -57,7 +57,7 @@ export default function AboutMe() {
                 I'm looking for a job currently, If you see me as a good fit,
                 check my{" "}
                 <a
-                  href={userData.resumeUrl}
+                  href="https://docs.google.com/document/d/1rTPlffCL5KsWeqlYgO7xYZLzsBvr5JhdTU2XLnFEKz0/edit?usp=sharing"
                   target="__blank"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
                 >

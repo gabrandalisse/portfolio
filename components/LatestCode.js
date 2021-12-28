@@ -20,6 +20,8 @@ export default function LatestCode({ repositories }) {
           </h1>
 
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             href={`https://github.com/${userData.githubUsername}`}
             className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
           >

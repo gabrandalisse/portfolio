@@ -10,7 +10,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
   const meta = {
     title: "Gabriel Andres Brandalisse - Portfolio",
     description: `I've been developing web apps for 5 years straight. Get in touch with me to know more.`,
-    image: "/favicon.svg",
+    image: "/favicon.ico",
     type: "website",
     ...customMeta,
   };
@@ -39,7 +39,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
 
-        <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link
           rel="canonical"
           href={`https://gabrandalisse.com${router.asPath}`}
