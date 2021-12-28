@@ -8,6 +8,8 @@ export default function Contact() {
     message: ''
   });
 
+  const {name, email, message} = clientInfo;
+
   const handleChange = (e) => {
     setClientInfo({
       ...clientInfo,
@@ -18,7 +20,6 @@ export default function Contact() {
  const handleSubmit = (e) => {
    e.preventDefault();
 
-   const { name, email, message } = clientInfo;
    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
    if (!name || !email || !emailRegex.test(email) || !message)
@@ -30,12 +31,18 @@ export default function Contact() {
          Accept: "application/json, text/plain, */*",
          "Content-Type": "application/json",
        },
-       body: JSON.stringify(userData),
+       body: JSON.stringify(clientInfo),
 
      }).then((res) => {
-       console.log("Response received");
+       console.log("RES", res);
        if (res.status === 200) {
-         console.log("Response succeeded!");
+        alert("Your message was sended successfully");
+
+         setClientInfo({
+           name: '',
+           email: '',
+           message: ''
+         });
        }
      });
  }
@@ -128,6 +135,7 @@ export default function Contact() {
               type="text"
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="name"
+              value={name}
               onChange={(e) => handleChange(e)}
             />
             <label htmlFor="email" className="text-sm text-gray-600 mx-4 mt-4">
@@ -137,6 +145,7 @@ export default function Contact() {
               type="text"
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="email"
+              value={email}
               onChange={(e) => handleChange(e)}
             />
             <label
@@ -150,6 +159,7 @@ export default function Contact() {
               type="text"
               className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
               name="message"
+              value={message}
               onChange={(e) => handleChange(e)}
             ></textarea>
             <button
