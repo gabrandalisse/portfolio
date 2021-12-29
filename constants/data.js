@@ -49,7 +49,7 @@ const userData = {
       company: "Naranja X",
       year: "2021",
       companyLink: "https://www.naranjax.com/",
-      desc: "Focused in Back End development implementing Microservices using AWS technologies (such as Step Functions, Lambdas, API Gateway, etc.), Node.js, TypeScript and the Serverless Framework.",
+      desc: "Focused in Back End development building Microservices using AWS technologies (such as Step Functions, Lambdas, API Gateway, etc.), Node.js, TypeScript and the Serverless Framework.",
     },
     {
       title: "High School",
