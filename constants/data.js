@@ -52,11 +52,18 @@ const userData = {
       desc: "Focused in Back End development building Microservices using AWS technologies (such as Step Functions, Lambdas, API Gateway, etc.), Node.js, TypeScript and the Serverless Framework.",
     },
     {
+      title: "University",
+      company: "Universidad Tecnológica Nacional - Facultad Regional Córdoba",
+      year: "2017",
+      companyLink: "https://www.frc.utn.edu.ar/",
+      desc: "I'm actually studying Systems Information Engineering at one of the most important university of Argentina, with expectations of graduation in the 2023.",
+    },
+    {
       title: "High School",
       company: "I.P.E.T.yM N°69 Juana Manso de Norhona",
       year: "2016",
       companyLink: "http://www.ipetym69.edu.ar/",
-      desc: "Went to a technician high school, where I took the electronic specialization and I graduated as a Electronic Technician.",
+      desc: "I went to a technician high school, where I took the electronic specialization and I graduated as a Electronic Technician.",
     },
     {
       title: "Electronic Technician Internship",

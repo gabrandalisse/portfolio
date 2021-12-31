@@ -59,6 +59,7 @@ export default function AboutMe() {
                 <a
                   href="https://docs.google.com/document/d/1rTPlffCL5KsWeqlYgO7xYZLzsBvr5JhdTU2XLnFEKz0/edit?usp=sharing"
                   target="__blank"
+                  rel="noopener noreferrer"
                   className="text-gray-800 border-b-2 border-gray-800 dark:border-gray-300 font-bold dark:text-gray-300"
                 >
                   CV
@@ -75,6 +76,7 @@ export default function AboutMe() {
               <div className="flex flex-row justify-start items-center">
                 <a
                   target="_blank"
+                  rel="noopener noreferrer"
                   href={userData.socialLinks.github}
                   className="flex flex-row items-center space-x-4 group"
                 >
@@ -89,6 +91,7 @@ export default function AboutMe() {
               <div className="flex flex-row justify-start items-center">
                 <a
                   target="_blank"
+                  rel="noopener noreferrer"
                   href={userData.socialLinks.linkedin}
                   className="flex flex-row items-center space-x-4 group"
                 >

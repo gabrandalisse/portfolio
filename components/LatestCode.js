@@ -66,6 +66,8 @@ const GithubRepoCard = ({ latestRepo }) => {
         {latestRepo.description}
       </p>
       <a
+        target="_blank" 
+        rel="noopener noreferrer"
         href={latestRepo.clone_url}
         className="font-semibold group flex flex-row space-x-2 w-full items-center"
       >
