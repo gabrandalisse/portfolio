@@ -145,6 +145,8 @@ export default function Contact() {
             <button
               type="submit"
               className="bg-blue-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-xs font-bold"
+              disabled={true}
+              title="For the moment you can't send me a message through here"
             >
               Send Message
             </button>
