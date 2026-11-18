@@ -2,238 +2,240 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import userData from "@constants/data";
+import MagneticButton from "./MagneticButton";
 
 export default function Navbar() {
   const router = useRouter();
-  console.log(router.asPath);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [localTime, setLocalTime] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    const updateClock = () => {
+      try {
+        const formatter = new Intl.DateTimeFormat("en-GB", {
+          timeZone: "America/Argentina/Cordoba",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        });
+        setLocalTime(`${formatter.format(new Date())} ART`);
+      } catch (e) {
+        setLocalTime("UTC-3 ART");
+      }
+    };
+
+    updateClock();
+    const timer = setInterval(updateClock, 1000);
+
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      if (windowHeight > 0) {
+        setScrollProgress(Math.min(1, Math.max(0, totalScroll / windowHeight)));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const navItems = [
+    { index: "01", label: "Work", href: "/projects" },
+    { index: "02", label: "Experience", href: "/experience" },
+    { index: "03", label: "About", href: "/about" },
+    { index: "04", label: "Contact", href: "/contact" },
+  ];
+
   return (
-    <div className="max-w-6xl  mx-auto px-4 py-10 md:py-20">
-      <div className="flex  md:flex-row justify-between items-center">
-        {/* Logo / Home / Text */}
+    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#0A0A0A]/85 dark:bg-[#0A0A0A]/85 light:bg-[#F4F3EE]/85 hairline-b transition-colors duration-300">
+      {/* Scroll Progress Hairline Indicator */}
+      <div className="w-full h-[2px] bg-transparent overflow-hidden">
+        <div
+          className="h-full bg-[#FF4D1C] origin-left transition-transform duration-75 ease-out"
+          style={{ transform: `scaleX(${scrollProgress})` }}
+        />
+      </div>
 
-        <div className="flex flex-col">
-          <Link href="/">
-            <a>
-              <h1 className="font-semibold text-xl dark:text-gray-100">
-                {userData.name}
-              </h1>
-              <p className="text-base font-light text-gray-500 dark:text-gray-300">
-                {userData.designation}
-              </p>
-            </a>
-          </Link>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-12 items-center min-h-[72px]">
+          {/* Col 1-3: Brand & Architectural Monogram */}
+          <div className="col-span-1 lg:col-span-3 flex items-center space-x-3 py-3 lg:hairline-r lg:pr-6">
+            <Link href="/">
+              <a className="group flex items-center space-x-3 focus:outline-none">
+                <span className="w-2.5 h-2.5 bg-[#FF4D1C] inline-block transition-transform duration-300 group-hover:rotate-45" />
+                <div className="flex flex-col">
+                  <span className="font-display font-bold text-sm sm:text-base tracking-tight uppercase leading-none">
+                    {userData.name}
+                  </span>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-[#8E8D8A] mt-1">
+                    {userData.designation}
+                  </span>
+                </div>
+              </a>
+            </Link>
+          </div>
+
+          {/* Col 4-6: Telemetry Status (Location + Live Time + Availability) */}
+          <div className="hidden lg:flex lg:col-span-4 items-center justify-between px-6 py-3 hairline-r font-mono text-[11px] text-[#8E8D8A]">
+            <div className="flex items-center space-x-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+              </span>
+              <span className="uppercase tracking-wider text-current">
+                SWE @ NARANJA X
+              </span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span>CÓRDOBA, AR</span>
+              <span className="text-[#FF4D1C]">/</span>
+              <span className="tabular-nums">{mounted ? localTime : "UTC-3"}</span>
+            </div>
+          </div>
+
+          {/* Col 8-10: Indexed Navigation Links */}
+          <nav
+            aria-label="Primary Navigation"
+            className="hidden lg:flex lg:col-span-3 items-center justify-around px-4 py-3 hairline-r"
+          >
+            {navItems.map((item) => {
+              const isActive = router.asPath === item.href;
+              return (
+                <Link key={item.href} href={item.href}>
+                  <a
+                    className={`group font-mono text-xs uppercase tracking-wider transition-colors duration-200 flex items-baseline space-x-1 ${
+                      isActive ? "text-[#FF4D1C] font-semibold" : "hover:text-[#FF4D1C]"
+                    }`}
+                  >
+                    <span className="text-[10px] text-[#8E8D8A] group-hover:text-[#FF4D1C] transition-colors">
+                      {item.index}/
+                    </span>
+                    <span className="editorial-link">{item.label}</span>
+                  </a>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Col 11-12: Socials, Theme Switcher & Mobile Menu Trigger */}
+          <div className="col-span-1 lg:col-span-2 flex items-center justify-end space-x-3 sm:space-x-4 py-3 pl-4">
+            <MagneticButton
+              href={userData.socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="GitHub Profile"
+              strength={0.3}
+              className="font-mono text-xs uppercase tracking-wider hover:text-[#FF4D1C] transition-colors hidden sm:inline-flex"
+            >
+              GH↗
+            </MagneticButton>
+
+            <MagneticButton
+              href={userData.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel="LinkedIn Profile"
+              strength={0.3}
+              className="font-mono text-xs uppercase tracking-wider hover:text-[#FF4D1C] transition-colors hidden sm:inline-flex"
+            >
+              IN↗
+            </MagneticButton>
+
+            <button
+              aria-label="Toggle color theme"
+              type="button"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="hairline-border px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest hover:border-[#FF4D1C] hover:text-[#FF4D1C] transition-colors focus:outline-none"
+            >
+              {mounted ? (theme === "dark" ? "LIGHT" : "DARK") : "MODE"}
+            </button>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              aria-label="Toggle Menu"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden hairline-border px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest text-[#FF4D1C]"
+            >
+              {mobileMenuOpen ? "CLOSE [X]" : "INDEX [+]"}
+            </button>
+          </div>
         </div>
+      </div>
 
-        <div className="space-x-8 hidden md:block">
-          <Link href="/about">
-            <a
-              className={`text-base  ${
-                router.asPath === "/about"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
-            >
-              About{" "}
-              {router.asPath === "/about" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down inline-block h-3 w-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              )}
-            </a>
-          </Link>
-          <Link href="/projects">
-            <a
-              className={`text-base  ${
-                router.asPath === "/projects"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
-            >
-              Projects
-              {router.asPath === "/projects" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down inline-block h-3 w-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              )}
-            </a>
-          </Link>
-          <Link href="/experience">
-            <a
-              className={`text-base  ${
-                router.asPath === "/experience"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
-            >
-              Experience{" "}
-              {router.asPath === "/experience" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down inline-block h-3 w-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              )}
-            </a>
-          </Link>
-          <Link href="/contact">
-            <a
-              className={`text-base  ${
-                router.asPath === "/contact"
-                  ? "text-gray-800 font-bold dark:text-gray-400"
-                  : "text-gray-600 dark:text-gray-300 font-normal "
-              }`}
-            >
-              Contact
-              {router.asPath === "/contact" && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-arrow-down inline-block h-3 w-3"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
-                  />
-                </svg>
-              )}
-            </a>
-          </Link>
-        </div>
-
-        {/* Social nav */}
-        <div className="space-x-4 flex flex-row items-center">
-          <a
-            title="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={userData.socialLinks.github}
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-github h-5 w-5"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-            </svg>
-          </a>
-
-          <a
-            title="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={userData.socialLinks.linkedin}
-            className="text-base font-normal text-gray-600 dark:text-gray-300"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-linkedin h-5 w-5"
-              viewBox="0 0 16 16"
-            >
-              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-            </svg>
-          </a>
-          <button
-            aria-label="Toggle Dark Mode"
-            type="button"
-            className="w-10 h-10 p-3 rounded focus:outline-none"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            {mounted && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                stroke="currentColor"
-                className="w-4 h-4 text-yellow-500 dark:text-yellow-500"
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:hidden hairline-t bg-[#0A0A0A] text-[#F4F3EE] px-6 py-6"
+        >
+          <div className="flex items-center justify-between font-mono text-[11px] text-[#8E8D8A] pb-4 mb-4 hairline-b">
+            <span>{userData.address}</span>
+            <span>{mounted ? localTime : "ART"}</span>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Link href="/">
+              <a
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-mono text-xs uppercase tracking-widest py-2 hairline-b flex items-center justify-between"
               >
-                {theme === "dark" ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                )}
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
-      <div className="space-x-8 block md:hidden mt-4">
-        <Link href="/about">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            About
-          </a>
-        </Link>
-        <Link href="/projects">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            Projects
-          </a>
-        </Link>
-        <Link href="/experience">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            Experience
-          </a>
-        </Link>
-        <Link href="/contact">
-          <a className="text-base font-normal text-gray-600 dark:text-gray-300">
-            Contact
-          </a>
-        </Link>
-      </div>
-    </div>
+                <span>00 / INDEX</span>
+                <span className="text-[#FF4D1C]">→</span>
+              </a>
+            </Link>
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href}>
+                <a
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-mono text-xs uppercase tracking-widest py-2 hairline-b flex items-center justify-between"
+                >
+                  <span>
+                    {item.index} / {item.label}
+                  </span>
+                  <span className="text-[#FF4D1C]">→</span>
+                </a>
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center justify-between mt-6 pt-4 font-mono text-xs text-[#8E8D8A]">
+            <a
+              href={userData.socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FF4D1C]"
+            >
+              GITHUB ↗
+            </a>
+            <a
+              href={userData.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FF4D1C]"
+            >
+              LINKEDIN ↗
+            </a>
+            <a href={`mailto:${userData.email}`} className="hover:text-[#FF4D1C]">
+              EMAIL ↗
+            </a>
+          </div>
+        </motion.div>
+      )}
+    </header>
   );
 }

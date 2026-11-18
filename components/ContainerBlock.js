@@ -49,7 +49,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <link rel="canonical" href={`https://gabrandalisse.com${router.asPath}`}/>
       </Head>
       
-      <main className="dark:bg-gray-800 w-full">
+      <main className="min-h-screen w-full transition-colors duration-300">
         <Navbar />
         <div>{children}</div>
         <Footer />

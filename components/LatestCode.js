@@ -1,81 +1,110 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import getLatestRepos from "@lib/getLatestRepos";
+import { motion, useReducedMotion } from "framer-motion";
 import userData from "@constants/data";
+import MagneticButton from "./MagneticButton";
+
+const EXPO_EASE = [0.16, 1, 0.3, 1];
 
 export default function LatestCode({ repositories }) {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState(repositories || []);
+  const shouldReduceMotion = useReducedMotion();
 
-  useEffect(async () => {
-    // let latestRepos = await getLatestRepos(userData);
-    // console.log("latestRepos", latestRepos);
-    setRepos(repositories);
-  }, []);
+  useEffect(() => {
+    if (repositories && repositories.length > 0) {
+      setRepos(repositories);
+    }
+  }, [repositories]);
+
+  if (!repos || repos.length === 0) {
+    return null;
+  }
+
   return (
-    <section className="bg-[#F1F1F1] -mt-40 dark:bg-gray-900 pb-40">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center md:pt-40 mx-10">
-          <h1 className="text-6xl lg:text-9xl max-w-lg font-bold text-gray-500 my-20 md:my-0 md:text-white dark:text-gray-600 text-center lg:text-left">
-            Latest Code
-          </h1>
+    <section className="w-full hairline-b">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
+        {/* Section Metadata Strip */}
+        <div className="grid grid-cols-2 md:grid-cols-12 hairline-b py-3 font-mono text-[11px] uppercase tracking-widest text-[#8E8D8A]">
+          <div className="col-span-1 md:col-span-4 flex items-center space-x-2">
+            <span className="text-[#FF4D1C] font-bold">[05 / 05]</span>
+            <span>OPEN SOURCE TELEMETRY</span>
+          </div>
+          <div className="hidden md:flex md:col-span-4 items-center">
+            <span>SOURCE: GITHUB.COM/{userData.githubUsername.toUpperCase()}</span>
+          </div>
+          <div className="col-span-1 md:col-span-4 text-right">
+            <span>LIVE REPOSITORY INDEX</span>
+          </div>
+        </div>
 
-          <a
+        {/* Header */}
+        <div className="py-12 md:py-16 hairline-b flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-widest text-[#FF4D1C] mb-3">
+              // CODE REPOSITORIES
+            </p>
+            <h2 className="heading-section uppercase">LATEST COMMITS & REPOS</h2>
+          </div>
+
+          <MagneticButton
+            href={`https://github.com/${userData.githubUsername}`}
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://github.com/${userData.githubUsername}`}
-            className="mb-20 md:mb-0 px-8 py-4 rounded-md bg-white shadow-lg text-xl font-semibold flex flex-row space-x-4 items-center dark:text-gray-700"
+            strength={0.22}
+            className="hairline-border px-5 py-3 font-mono text-xs uppercase tracking-widest hover:border-[#FF4D1C] hover:text-[#FF4D1C] transition-colors"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-arrow-up-right-square"
-              stroke="4"
-              strokeWidth="4"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fillRule="evenodd"
-                d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"
-              />
-            </svg>
-            <p>View GitHub</p>
-          </a>
+            <span>GITHUB PROFILE (@{userData.githubUsername})</span>
+            <span className="ml-2">↗</span>
+          </MagneticButton>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-10 gap-y-20">
-        {/* Single github Repo */}
 
-        {repos &&
-          repos.map((latestRepo, idx) => (
-            <GithubRepoCard latestRepo={latestRepo} key="idx" />
+        {/* Repository Blueprint Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 hairline-b">
+          {repos.map((latestRepo, idx) => (
+            <motion.a
+              key={latestRepo.id || latestRepo.name || idx}
+              href={latestRepo.html_url || latestRepo.clone_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={
+                shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }
+              }
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.55,
+                delay: idx * 0.05,
+                ease: EXPO_EASE,
+              }}
+              className="group bg-[#0A0A0A] dark:bg-[#0A0A0A] light:bg-[#F4F3EE] p-6 sm:p-8 flex flex-col justify-between hover:bg-[#111111] transition-colors"
+            >
+              <div>
+                <div className="flex items-center justify-between font-mono text-xs text-[#8E8D8A] mb-4">
+                  <span className="text-[#FF4D1C]">
+                    REPO // 0{idx + 1}
+                  </span>
+                  <span>{latestRepo.language || "CODE"}</span>
+                </div>
+                <h3 className="font-display font-bold text-xl sm:text-2xl tracking-tight group-hover:text-[#FF4D1C] transition-colors break-words">
+                  {latestRepo.name}
+                </h3>
+                <p className="text-sm text-[#8E8D8A] mt-3 leading-relaxed line-clamp-3">
+                  {latestRepo.description ||
+                    "Source repository engineered by Gabriel Andres Brandalisse."}
+                </p>
+              </div>
+
+              <div className="mt-8 pt-4 hairline-t flex items-center justify-between font-mono text-xs">
+                <span className="editorial-link uppercase tracking-wider group-hover:text-[#FF4D1C]">
+                  INSPECT SOURCE
+                </span>
+                <span className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-[#FF4D1C]">
+                  ↗
+                </span>
+              </div>
+            </motion.a>
           ))}
+        </div>
       </div>
     </section>
   );
 }
-
-const GithubRepoCard = ({ latestRepo }) => {
-  return (
-    <div className="github-repo">
-      <h1 className="font-semibold text-xl dark:text-gray-200 text-gray-700">
-        {latestRepo.name}
-      </h1>
-      <p className="text-base font-normal my-4 text-gray-500">
-        {latestRepo.description}
-      </p>
-      <a
-        target="_blank" 
-        rel="noopener noreferrer"
-        href={latestRepo.clone_url}
-        className="font-semibold group flex flex-row space-x-2 w-full items-center"
-      >
-        <p>View Repository </p>
-        <div className="transform  group-hover:translate-x-2 transition duration-300">
-          &rarr;
-        </div>
-      </a>
-    </div>
-  );
-};
