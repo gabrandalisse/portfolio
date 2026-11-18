@@ -102,7 +102,7 @@ export default function Contact() {
                 GET IN TOUCH, LET&apos;S TALK.
               </h1>
               <p className="text-base sm:text-lg text-[#8E8D8A] leading-relaxed max-w-xl">
-                Whether you have an engineering challenge, backend architecture inquiry, or product opportunity, reach out directly via email, phone, or LinkedIn.
+                Whether you have an engineering challenge, backend architecture inquiry, or product opportunity, reach out directly via email or LinkedIn.
               </p>
             </div>
 
@@ -127,21 +127,6 @@ export default function Contact() {
                 >
                   {copiedEmail ? "COPIED [✓]" : "COPY ADDRESS"}
                 </button>
-              </div>
-
-              <div className="p-5 hairline-border bg-[#111111]/40 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest text-[#8E8D8A] block mb-1">
-                    DIRECT PHONE / WHATSAPP
-                  </span>
-                  <a
-                    href={`tel:${userData.phone.replace(/\s+/g, "")}`}
-                    className="text-sm sm:text-base font-bold hover:text-[#FF4D1C] transition-colors"
-                  >
-                    {userData.phone}
-                  </a>
-                </div>
-                <span className="text-[#FF4D1C]">VOICE / MSG</span>
               </div>
 
               <div className="p-5 hairline-border bg-[#111111]/40 flex items-center justify-between">

@@ -13,7 +13,7 @@ export default function Experience() {
         {/* Section Metadata Strip */}
         <div className="grid grid-cols-2 md:grid-cols-12 hairline-b py-3 font-mono text-[11px] uppercase tracking-widest text-[#8E8D8A]">
           <div className="col-span-1 md:col-span-4 flex items-center space-x-2">
-            <span className="text-[#FF4D1C] font-bold">[03 / 05]</span>
+            <span className="text-[#FF4D1C] font-bold">[02 / 04]</span>
             <span>CAREER & SYSTEM BLUEPRINT</span>
           </div>
           <div className="hidden md:flex md:col-span-4 items-center">

@@ -40,7 +40,7 @@ export default function Hero() {
         {/* Top Metadata Strip */}
         <div className="grid grid-cols-2 md:grid-cols-12 hairline-b py-3 font-mono text-[11px] uppercase tracking-widest text-[#8E8D8A]">
           <div className="col-span-1 md:col-span-4 flex items-center space-x-2">
-            <span className="text-[#FF4D1C] font-bold">[01 / 05]</span>
+            <span className="text-[#FF4D1C] font-bold">[01 / 04]</span>
             <span>ARCHITECTURAL DOSSIER</span>
           </div>
           <div className="hidden md:flex md:col-span-4 items-center justify-center">
@@ -136,7 +136,7 @@ export default function Hero() {
 
             <div className="lg:col-span-5 flex flex-wrap items-center lg:justify-end gap-4">
               <MagneticButton
-                href="#work-showcase"
+                href="#experience-blueprint"
                 strength={0.22}
                 className="bg-[#FF4D1C] text-[#0A0A0A] font-mono text-xs font-bold uppercase tracking-widest px-7 py-4 hover:bg-[#F4F3EE] hover:text-[#0A0A0A] transition-colors"
               >

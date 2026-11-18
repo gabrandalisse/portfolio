@@ -6,7 +6,6 @@ const userData = {
   roleDetail: "Software Engineer & Systems Engineering Student",
   avatarUrl: "/avatar2.jpg",
   email: "gabibrandalisse@gmail.com",
-  phone: "+549 3525-504799",
   address: "Córdoba, Argentina.",
   cvUrl: "https://docs.google.com/document/d/1rTPlffCL5KsWeqlYgO7xYZLzsBvr5JhdTU2XLnFEKz0/edit?usp=sharing",
   projects: [

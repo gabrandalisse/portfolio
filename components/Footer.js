@@ -90,9 +90,8 @@ export default function Footer() {
 
             <div className="lg:col-span-5 lg:text-right font-mono text-xs space-y-1 text-[#8E8D8A]">
               <p className="text-[#F4F3EE] font-bold">
-                DIRECT LINE: {userData.phone}
+                BASE: {userData.address} (UTC-3)
               </p>
-              <p>BASE: {userData.address} (UTC-3)</p>
             </div>
           </div>
         </div>
@@ -103,9 +102,6 @@ export default function Footer() {
             <p className="text-[#F4F3EE] font-medium">
               &copy; {new Date().getFullYear()} {userData.fullName}. All Rights Reserved.
             </p>
-            <p className="text-[11px] mt-1">
-              Engineered with Next.js · Tailwind CSS · Framer Motion · Lenis Smooth Scroll
-            </p>
           </div>
 
           <div className="md:col-span-4 flex flex-wrap items-center gap-6">
@@ -114,24 +110,19 @@ export default function Footer() {
                 00/Home
               </a>
             </Link>
-            <Link href="/projects">
-              <a className="editorial-link hover:text-[#FF4D1C] uppercase">
-                01/Work
-              </a>
-            </Link>
             <Link href="/experience">
               <a className="editorial-link hover:text-[#FF4D1C] uppercase">
-                02/Experience
+                01/Experience
               </a>
             </Link>
             <Link href="/about">
               <a className="editorial-link hover:text-[#FF4D1C] uppercase">
-                03/About
+                02/About
               </a>
             </Link>
             <Link href="/contact">
               <a className="editorial-link hover:text-[#FF4D1C] uppercase">
-                04/Contact
+                03/Contact
               </a>
             </Link>
           </div>

@@ -34,10 +34,9 @@ export default function Navbar() {
 
   const navItems = [
     { index: "00", label: "Index", href: "/" },
-    { index: "01", label: "Work", href: "/projects" },
-    { index: "02", label: "Experience", href: "/experience" },
-    { index: "03", label: "About", href: "/about" },
-    { index: "04", label: "Contact", href: "/contact" },
+    { index: "01", label: "Experience", href: "/experience" },
+    { index: "02", label: "About", href: "/about" },
+    { index: "03", label: "Contact", href: "/contact" },
   ];
 
   return (
