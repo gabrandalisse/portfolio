@@ -11,29 +11,10 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [localTime, setLocalTime] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-
-    const updateClock = () => {
-      try {
-        const formatter = new Intl.DateTimeFormat("en-GB", {
-          timeZone: "America/Argentina/Cordoba",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-        });
-        setLocalTime(`${formatter.format(new Date())} ART`);
-      } catch (e) {
-        setLocalTime("UTC-3 ART");
-      }
-    };
-
-    updateClock();
-    const timer = setInterval(updateClock, 1000);
 
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;
@@ -47,12 +28,12 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      clearInterval(timer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const navItems = [
+    { index: "00", label: "Index", href: "/" },
     { index: "01", label: "Work", href: "/projects" },
     { index: "02", label: "Experience", href: "/experience" },
     { index: "03", label: "About", href: "/about" },
@@ -88,35 +69,17 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Col 4-6: Telemetry Status (Location + Live Time + Availability) */}
-          <div className="hidden lg:flex lg:col-span-4 items-center justify-between px-6 py-3 hairline-r font-mono text-[11px] text-[#8E8D8A]">
-            <div className="flex items-center space-x-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-              </span>
-              <span className="uppercase tracking-wider text-current">
-                SWE @ NARANJA X
-              </span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span>CÓRDOBA, AR</span>
-              <span className="text-[#FF4D1C]">/</span>
-              <span className="tabular-nums">{mounted ? localTime : "UTC-3"}</span>
-            </div>
-          </div>
-
-          {/* Col 8-10: Indexed Navigation Links */}
+          {/* Col 4-9: Extended Indexed Navigation Links */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden lg:flex lg:col-span-3 items-center justify-around px-4 py-3 hairline-r"
+            className="hidden lg:flex lg:col-span-6 items-center justify-around px-8 py-3 hairline-r"
           >
             {navItems.map((item) => {
               const isActive = router.asPath === item.href;
               return (
                 <Link key={item.href} href={item.href}>
                   <a
-                    className={`group font-mono text-xs uppercase tracking-wider transition-colors duration-200 flex items-baseline space-x-1 ${
+                    className={`group font-mono text-xs uppercase tracking-widest transition-colors duration-200 flex items-baseline space-x-1.5 py-1 ${
                       isActive ? "text-[#FF4D1C] font-semibold" : "hover:text-[#FF4D1C]"
                     }`}
                   >
@@ -130,8 +93,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Col 11-12: Socials, Theme Switcher & Mobile Menu Trigger */}
-          <div className="col-span-1 lg:col-span-2 flex items-center justify-end space-x-3 sm:space-x-4 py-3 pl-4">
+          {/* Col 10-12: Socials, Theme Switcher & Mobile Menu Trigger */}
+          <div className="col-span-1 lg:col-span-3 flex items-center justify-end space-x-4 sm:space-x-6 py-3 pl-4">
             <MagneticButton
               href={userData.socialLinks.github}
               target="_blank"
@@ -140,7 +103,7 @@ export default function Navbar() {
               strength={0.3}
               className="font-mono text-xs uppercase tracking-wider hover:text-[#FF4D1C] transition-colors hidden sm:inline-flex"
             >
-              GH↗
+              GITHUB ↗
             </MagneticButton>
 
             <MagneticButton
@@ -151,14 +114,14 @@ export default function Navbar() {
               strength={0.3}
               className="font-mono text-xs uppercase tracking-wider hover:text-[#FF4D1C] transition-colors hidden sm:inline-flex"
             >
-              IN↗
+              LINKEDIN ↗
             </MagneticButton>
 
             <button
               aria-label="Toggle color theme"
               type="button"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="hairline-border px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-widest hover:border-[#FF4D1C] hover:text-[#FF4D1C] transition-colors focus:outline-none"
+              className="hairline-border px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest hover:border-[#FF4D1C] hover:text-[#FF4D1C] transition-colors focus:outline-none"
             >
               {mounted ? (theme === "dark" ? "LIGHT" : "DARK") : "MODE"}
             </button>
@@ -185,20 +148,7 @@ export default function Navbar() {
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="lg:hidden hairline-t bg-[#0A0A0A] text-[#F4F3EE] px-6 py-6"
         >
-          <div className="flex items-center justify-between font-mono text-[11px] text-[#8E8D8A] pb-4 mb-4 hairline-b">
-            <span>{userData.address}</span>
-            <span>{mounted ? localTime : "ART"}</span>
-          </div>
           <div className="grid grid-cols-2 gap-4">
-            <Link href="/">
-              <a
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-mono text-xs uppercase tracking-widest py-2 hairline-b flex items-center justify-between"
-              >
-                <span>00 / INDEX</span>
-                <span className="text-[#FF4D1C]">→</span>
-              </a>
-            </Link>
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
                 <a
