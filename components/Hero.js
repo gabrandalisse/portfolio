@@ -121,7 +121,7 @@ export default function Hero() {
                 transition={maskTransition(0.44)}
                 className="text-base sm:text-lg md:text-xl leading-relaxed text-[#8E8D8A] font-normal max-w-3xl"
               >
-                {userData.about.title}. Software Engineer at{" "}
+                {userData.about.title}. Senior Software Engineer at{" "}
                 <a
                   href="https://www.naranjax.com/"
                   target="_blank"
@@ -130,7 +130,7 @@ export default function Hero() {
                 >
                   Naranja X
                 </a>{" "}
-                building distributed microservices with AWS, Serverless, Node.js & TypeScript.
+                specializing in high-concurrency microservices with TypeScript, Fastify, Kotlin, Spring Boot & AWS EKS/Lambda.
               </motion.p>
             </div>
 
@@ -142,17 +142,6 @@ export default function Hero() {
               >
                 <span>EXPLORE ARCHIVE</span>
                 <span className="ml-2">↓</span>
-              </MagneticButton>
-
-              <MagneticButton
-                href={userData.cvUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                strength={0.22}
-                className="hairline-border font-mono text-xs uppercase tracking-widest px-6 py-4 hover:border-[#FF4D1C] hover:text-[#FF4D1C] transition-colors"
-              >
-                <span>CURRICULUM [CV]</span>
-                <span className="ml-2">↗</span>
               </MagneticButton>
             </div>
           </div>

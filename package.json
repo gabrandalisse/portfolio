@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev",
@@ -16,8 +16,7 @@
     "next-themes": "0.0.15",
     "nodemailer": "^6.7.2",
     "react": "17.x",
-    "react-dom": "17.x",
-    "react-rough-notation": "^1.0.1"
+    "react-dom": "17.x"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",

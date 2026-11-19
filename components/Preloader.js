@@ -88,7 +88,7 @@ export default function Preloader() {
                 transition={{ duration: 0.8, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
                 className="font-mono text-xs md:text-sm text-[#8E8D8A]"
               >
-                {userData.designation} · Software Engineer @ Naranja X
+                Senior Software Engineer @ Naranja X · Cloud-Native Architecture
               </motion.p>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Preloader() {
           <div className="w-full">
             <div className="flex justify-between items-end mb-4">
               <span className="font-mono text-xs uppercase tracking-widest text-[#8E8D8A]">
-                LOADING MODULES (MERN / AWS / SERVERLESS)
+                LOADING MODULES (TYPESCRIPT / KOTLIN / AWS EKS / LAMBDA)
               </span>
               <span className="font-mono text-4xl md:text-6xl font-bold text-[#F4F3EE] leading-none">
                 {String(progress).padStart(3, "0")}%

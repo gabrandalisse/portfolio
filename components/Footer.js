@@ -75,17 +75,6 @@ export default function Footer() {
               >
                 {copied ? "EMAIL COPIED [✓]" : "COPY EMAIL"}
               </button>
-
-              <MagneticButton
-                href={userData.cvUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                strength={0.22}
-                className="hairline-border font-mono text-xs uppercase tracking-widest px-5 py-5 hover:border-[#FF4D1C] hover:text-[#FF4D1C] transition-colors"
-              >
-                <span>RESUME / CV</span>
-                <span className="ml-2">↗</span>
-              </MagneticButton>
             </div>
 
             <div className="lg:col-span-5 lg:text-right font-mono text-xs space-y-1 text-[#8E8D8A]">

@@ -18,7 +18,7 @@ export default function AboutMe() {
             <span>ENGINEERING PROFILE & ETHOS</span>
           </div>
           <div className="hidden md:flex md:col-span-4 items-center">
-            <span>SYSTEMS INFORMATION ENGINEERING · UTN FRC</span>
+            <span>SOFTWARE ENGINEERING · SIGLO 21 / UTN</span>
           </div>
           <div className="col-span-1 md:col-span-4 text-right">
             <span>{userData.address}</span>
@@ -39,19 +39,12 @@ export default function AboutMe() {
 
               <div className="p-6 hairline-border bg-[#111111]/40 space-y-4 mb-8">
                 <div className="flex items-center justify-between font-mono text-xs hairline-b pb-3">
-                  <span className="text-[#8E8D8A]">ACTIVE PROJECT</span>
-                  <a
-                    href={userData.about.currentProjectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#FF4D1C] font-bold hover:underline"
-                  >
-                    {userData.about.currentProject} ↗
-                  </a>
+                  <span className="text-[#8E8D8A]">CURRENT ROLE</span>
+                  <span className="text-[#FF4D1C] font-bold">Senior SWE @ Naranja X</span>
                 </div>
                 <div className="flex items-center justify-between font-mono text-xs hairline-b pb-3">
-                  <span className="text-[#8E8D8A]">CURRENT ROLE</span>
-                  <span>SWE @ Naranja X</span>
+                  <span className="text-[#8E8D8A]">SPECIALIZATION</span>
+                  <span>Cloud-Native & Microservices</span>
                 </div>
                 <div className="flex items-center justify-between font-mono text-xs">
                   <span className="text-[#8E8D8A]">DIRECT MAIL</span>
@@ -65,7 +58,7 @@ export default function AboutMe() {
               </div>
             </div>
 
-            {/* Job Opportunities & CV Callout from original AboutMe */}
+            {/* Opportunities & Direct Contact Callout */}
             <div className="space-y-6 pt-6 hairline-t">
               <div>
                 <h3 className="font-mono text-xs uppercase tracking-widest text-[#FF4D1C] mb-2">
@@ -79,22 +72,11 @@ export default function AboutMe() {
                   >
                     mail
                   </a>{" "}
-                  or review my full curriculum vitae.
+                  and I&apos;ll get back to you.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <MagneticButton
-                  href={userData.cvUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  strength={0.22}
-                  className="bg-[#FF4D1C] text-[#0A0A0A] font-mono text-xs font-bold uppercase tracking-widest px-5 py-3.5 hover:bg-[#F4F3EE] transition-colors"
-                >
-                  <span>INSPECT FULL CV</span>
-                  <span className="ml-2">↗</span>
-                </MagneticButton>
-
                 <MagneticButton
                   href={userData.socialLinks.github}
                   target="_blank"

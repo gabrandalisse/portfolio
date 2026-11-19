@@ -17,10 +17,10 @@ export default function Experience() {
             <span>CAREER & SYSTEM BLUEPRINT</span>
           </div>
           <div className="hidden md:flex md:col-span-4 items-center">
-            <span>CHRONOLOGY: 2016 — PRESENT</span>
+            <span>CHRONOLOGY: 2017 — PRESENT</span>
           </div>
           <div className="col-span-1 md:col-span-4 text-right">
-            <span>FINTECH · ACADEMIA · TELEMETRY</span>
+            <span>FINTECH · CLOUD-NATIVE · MICROSERVICES</span>
           </div>
         </div>
 
@@ -35,7 +35,7 @@ export default function Experience() {
             </h2>
           </div>
           <p className="font-mono text-xs text-[#8E8D8A] max-w-md">
-            Structured timeline of professional software engineering, academic systems education at UTN FRC, and full-stack technical capabilities.
+            Career progression at Naranja X (Junior → Semi Senior → Senior Software Engineer), Software Engineering studies, and cloud-native technical blueprint.
           </p>
         </div>
 
@@ -83,9 +83,22 @@ export default function Experience() {
                   <span>@ {exp.company}</span>
                   <span>↗</span>
                 </a>
-                <p className="text-base text-[#8E8D8A] leading-relaxed">
-                  {exp.desc}
-                </p>
+                {exp.highlights && exp.highlights.length > 0 ? (
+                  <ul className="space-y-3 text-sm sm:text-base text-[#8E8D8A] leading-relaxed">
+                    {exp.highlights.map((item, hIdx) => (
+                      <li key={hIdx} className="flex items-start space-x-3">
+                        <span className="font-mono text-xs text-[#FF4D1C] mt-1 shrink-0">
+                          —
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-base text-[#8E8D8A] leading-relaxed">
+                    {exp.desc}
+                  </p>
+                )}
               </div>
 
               {/* Col 9-12: Domain Tags / Metrics */}
